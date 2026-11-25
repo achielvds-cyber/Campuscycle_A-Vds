@@ -135,11 +135,13 @@ export function BookingForm(props: BookingFormProps) {
     <form action={formAction} noValidate className="grid gap-6">
       {/* Everything inside can read what the user sent last time (useSentValues). */}
       <SentValues value={values}>
-        {failed && (
-          <div ref={summary} tabIndex={-1} className="rounded-frame">
-            <BookingProblem result={failed} />
-          </div>
-        )}
+    <p className="text-ink-soft">Bike broken? Choose a time and the repairs you need below.
+    </p>
+    {failed && (
+      <div ref={summary} tabIndex={-1} className="rounded-frame">
+        <BookingProblem result={failed} />
+      </div>
+    )}
 
         {member && (
           <Notice label="Logged in">
